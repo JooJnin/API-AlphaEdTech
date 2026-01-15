@@ -8,7 +8,7 @@ const controller = require('./controller')
 
 class Product extends controller{
     resourceName = "Produto"
-    
+
     createResource(req,res){
         const {name,value} = req.body;
         const newProduct = {id: this.nextId++, name, value};
@@ -30,7 +30,7 @@ class Product extends controller{
     }
 }
 
-const productController = new controller(products);
+const productController = new Product(products);
 
 
 module.exports = productController;
